@@ -54,3 +54,13 @@ export interface Contragent {
   "name"?: string;
   "organizationId": string;
 }
+
+export interface ITableHeader {
+  vehicle: string;
+  organization: string;
+  department: string;
+  contragent: string;
+  code: string;
+  trailer: string;
+  drivers: string[];
+}
