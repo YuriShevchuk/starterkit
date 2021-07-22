@@ -1,5 +1,15 @@
 table {
   width: 100%;
+
+  td {
+    padding: 10px;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background: #eee;
+    }
+  }
 }
 
 .mat-form-field {
@@ -20,4 +30,5 @@ table {
 
 .no-match {
   text-align: center;
+  padding: 50px;
 }
