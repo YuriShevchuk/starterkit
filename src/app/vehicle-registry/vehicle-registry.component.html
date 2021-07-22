@@ -1,1 +1,55 @@
-<p>vehicle-registry works!</p>
+<div class="vehicle-registry-filter" fxLayout="row">
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="vehicle">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Транспортний засіб </th>
+      <td mat-cell *matCellDef="let element"> {{element.vehicle}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="organization">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Організація </th>
+      <td mat-cell *matCellDef="let element"> {{element.organization}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Департамент </th>
+      <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="contragent">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Контрагент </th>
+      <td mat-cell *matCellDef="let element"> {{element.contragent}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Код </th>
+      <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="trailer">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Причіп </th>
+      <td mat-cell *matCellDef="let element"> {{element.trailer}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="drivers">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Водії </th>
+      <td mat-cell *matCellDef="let element"> {{element.drivers}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell no-match" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+</div>

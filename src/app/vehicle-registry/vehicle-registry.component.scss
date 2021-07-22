@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+  max-width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.vehicle-registry-filter {
+  justify-content: space-between;
+
+  .mat-form-field {
+    width: 300px;
+    position: relative;
+  }
+}
+
+.no-match {
+  text-align: center;
+}
